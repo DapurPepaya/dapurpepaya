@@ -104,3 +104,14 @@ products.forEach(product => {
         product.classList.toggle('prd-open');
     });
 });
+
+function switchLocation(location) {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.map-content');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+
+    document.querySelector(`[onclick="switchLocation('${location}')"]`).classList.add('active');
+    document.getElementById(location).classList.add('active');
+}
