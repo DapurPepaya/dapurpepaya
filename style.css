@@ -91,6 +91,9 @@ body {
 
 .web-margin {
     margin: 0 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Tombol Menu */
@@ -1955,3 +1958,287 @@ p.a-btn1-p {
     }
 }
 
+
+
+
+
+
+
+
+
+/* --- Add these new styles to your existing style.css file --- */
+
+/* =================================== */
+/* === LOGIN PAGE STYLES === */
+/* =================================== */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color, #f4f4f4);
+    padding: 20px;
+}
+
+.login-form {
+    background-color: var(--card-bg, #fff);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-form h2 {
+    color: var(--c1, #ff6347);
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    color: var(--text-color, #666);
+    margin-bottom: 30px;
+}
+
+.login-form .form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--c1, #ff6347);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--c2, #e55a40);
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--c1, #ff6347);
+    text-decoration: none;
+}
+
+/* =================================== */
+/* === ADMIN DASHBOARD STYLES (REVISED) === */
+/* =================================== */
+.admin-dashboard {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--card-bg, #fff);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--c1, #ff6347);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    color: var(--text-color-strong, #333);
+    margin: 0;
+    font-size: 24px;
+}
+
+
+/* MODAL & FORM STYLES */
+.admin-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+.admin-modal-content {
+    background-color: var(--bg-color, #fff);
+    color: var(--text-color, #333);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.admin-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color, #eee);
+    padding-bottom: 15px;
+}
+
+.admin-modal-header h2 {
+    margin: 0;
+    color: var(--c1, #ff6347);
+}
+
+#product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    background-color: var(--bg-color, #fff);
+    color: var(--text-color, #333);
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--c1, #ff6347);
+    box-shadow: 0 0 0 2px rgba(255, 99, 71, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+/* PRODUCT LIST STYLES (NEW & REVISED) */
+#admin-product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--card-bg, #fff);
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    transition: background-color 0.2s ease;
+}
+
+.admin-product-item:last-child {
+    border-bottom: none;
+}
+
+.admin-product-item:hover {
+    background-color: var(--bg-color, #f9f9f9);
+}
+
+.admin-product-item span {
+    font-weight: 500;
+    color: #333;
+}
+
+.admin-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* BUTTON STYLES (NEW & REVISED) */
+.admin-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.edit-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+#add-new-product-btn {
+    background-color: #28a745;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+#cancel-form-btn {
+    background-color: #6c757d;
+}
+
+#cancel-form-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover,
+#add-new-product-btn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Product */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
