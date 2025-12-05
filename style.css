@@ -848,13 +848,46 @@ span.home-span {
     margin: 40px 0 80px 0;
 }
 
+.product-xtraInfo {
+    margin: auto;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: var(--fontS);
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+    background-color: var(--t2);
+    border-left: 5px solid var(--border);
+}
+
+.subheader-special {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .subheader {
     width: 100%;
     display: flex;
     gap: 20px;
 }
 
+.box-special {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
 .subheader-text {
+    font-size: var(--fontXL);
+    font-weight: 570;
+    color: var(--text);
+}
+
+.subheader-text-centered {
     font-size: var(--fontXL);
     font-weight: 570;
     color: var(--text);
@@ -1010,163 +1043,101 @@ body.darkmode .subheader-text {
     }
 }
 
-/* Featured Product */
-.featured-product {
-    margin: 20px 0 80px 0;
-    background: var(--bg4);
-    border: 2px solid var(--border);
-    border-radius: var(--card-br);
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(66, 33, 9, 0.1);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    position: relative;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.featured-product::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, var(--t2) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 0;
-    animation: breathe 2s ease infinite;
-}
-
-.product-card-container {
+/* Special product */
+.special-product-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    background-color: var(--bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 700px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
 }
 
-.product-card-box {
+/* Bagian Gambar (Kiri) */
+.special-card-image {
+    flex: 2;
+    /* Mengambil 2 bagian dari total ruang flex */
+    min-width: 200px;
+    /* Memastikan gambar tidak terlalu kecil di layar sempit */
+    position: relative;
+}
+
+.special-card-image img {
     width: 100%;
     height: 100%;
-    min-height: 400px;
-    border-radius: 0;
-    background: var(--bg3);
-    border-radius: 1rem;
-    position: relative;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
-    transition: all .3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0;
+    object-fit: cover;
+    /* Memastikan gambar mengisi area tanpa distorsi */
+    display: block;
 }
 
-.product-card-image {
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-    object-fit: contain;
-    position: relative;
-    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5));
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-.product-premium-badge {
-    position: absolute;
-    overflow: hidden;
-    width: 150px;
-    height: 150px;
-    top: -10px;
-    left: -10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-.product-premium-badge::before {
-    content: 'Ramadhan';
-    position: absolute;
-    width: 150%;
-    height: 40px;
-    background-image: linear-gradient(45deg, #ff6547 0%, #ffb144 51%, #ff7053 100%);
-    transform: rotate(-45deg) translateY(-20px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
-}
-
-.product-premium-badge::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    bottom: 0;
-    left: 0;
-    height: 10px;
-    z-index: -1;
-    box-shadow: 140px -140px #cc3f47;
-    background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
-}
-
-.product-content {
-    padding: 2rem;
+/* Bagian Konten Teks (Kanan) */
+.special-card-content {
+    flex: 3;
+    /* Mengambil 3 bagian dari ruang (lebih lebar dari gambar) */
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
 }
 
-.product-category {
-    color: var(--c1);
-    font-size: var(--fontXS);
-    font-weight: 600;
+.special-category {
+    font-size: var(--fontS);
     text-transform: uppercase;
+    color: var(--c4);
+    font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
 }
 
-.product-name {
+.special-product-name {
     font-size: var(--fontXL);
-    color: var(--text);
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    color: var(--text);
+    margin-bottom: 12px;
     line-height: 1.2;
 }
 
-.product-description {
+.special-product-description {
     font-size: var(--fontS);
     color: var(--text2);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: auto;
+    /* Mendorong harga ke bawah */
+    padding-bottom: 20px;
 }
 
-.price-section {
+/* Kontainer untuk Harga dan Aksi (di bagian bawah kanan) */
+.special-price-action-container {
     display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--bg);
+    padding-top: 16px;
 }
 
-.price {
+.sp-price {
     font-size: var(--fontXL);
-    color: var(--c4);
     font-weight: 700;
+    color: var(--c1);
+    /* Warna hijau kebiruan untuk harga */
 }
 
-.price-currency {
-    font-size: var(--fontM);
-    color: var(--text2);
+/* Responsif untuk layar kecil (misal: HP) */
+@media (max-width: 600px) {
+    .special-product-card {
+        flex-direction: column;
+        /* Berubah menjadi vertikal di layar kecil */
+        max-width: 400px;
+    }
+
+    .special-card-image {
+        height: 250px;
+        /* Tinggi tetap untuk gambar saat mode vertikal */
+    }
 }
 
 /* Contact */
@@ -1954,7 +1925,7 @@ p.a-btn1-p {
         padding: 0.6rem 1rem;
         margin-right: 2px;
     }
-    
+
     /* Product */
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
